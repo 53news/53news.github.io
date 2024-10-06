@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Seismic Alert System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff4136;
+        }
+
+        .hero {
+            background-image: url('https://uxwxqjjvnqxjxwjvwjvw.supabase.co/storage/v1/object/public/images/earthquake-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff4136;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e60000;
+        }
+
+        .latest-alerts {
+            padding: 80px 0;
+            background-color: #111111;
+        }
+
+        .latest-alerts h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .alert-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .alert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .alert-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff4136;
+        }
+
+        .alert-card p {
+            margin-bottom: 15px;
+        }
+
+        .alert-card .magnitude {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        footer {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#alerts">Alerts</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Global Seismic Alert System</h1>
+                <p>Stay informed and prepared for seismic events worldwide</p>
+                <a href="#alerts" class="cta-button">View Latest Alerts</a>
+            </div>
+        </section>
+
+        <section id="alerts" class="latest-alerts">
+            <div class="container">
+                <h2>Latest Earthquake Alerts</h2>
+                <div class="alert-grid">
+                    <div class="alert-card">
+                        <h3>San Francisco, USA</h3>
+                        <p>Date: May 15, 2023</p>
+                        <p>Time: 14:30 UTC</p>
+                        <p class="magnitude">Magnitude: 5.2</p>
+                    </div>
+                    <div class="alert-card">
+                        <h3>Tokyo, Japan</h3>
+                        <p>Date: May 14, 2023</p>
+                        <p>Time: 22:15 UTC</p>
+                        <p class="magnitude">Magnitude: 4.7</p>
+                    </div>
+                    <div class="alert-card">
+                        <h3>Santiago, Chile</h3>
+                        <p>Date: May 13, 2023</p>
+                        <p>Time: 03:45 UTC</p>
+                        <p class="magnitude">Magnitude: 6.1</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Global Seismic Alert System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
