@@ -1,9 +1,138 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-  <title>WHAT'S THIS?</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的GitHub首页</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #24292e;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        h1 {
+            margin-bottom: 0;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .nav-links li {
+            margin: 10px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #0366d6;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: #0366d6;
+            color: white;
+        }
+        .project-list, .blog-list {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .project-list h2, .blog-list h2 {
+            border-bottom: 2px solid #0366d6;
+            padding-bottom: 10px;
+        }
+        .project-list ul, .blog-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .project-list li, .blog-list li {
+            margin-bottom: 10px;
+        }
+        .project-list a, .blog-list a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .project-list a:hover, .blog-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <h1>这仅仅是一个导航页里面包含我所有的项目,但是他特别简陋.如果你想要了解我的项目，请前往bilibili.com搜索53TV </h1>
-  <a href=http://53news.github.io/CNS.html>CNShaking3.1.0</a>
-</body>
+    <header>
+        <h1>欢迎来到我的GitHub首页</h1>
+        <p>这里是我的项目和博客导航</p>
+    </header>
 
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#projects">项目</a></li>
+            <li><a href="#blog">博客</a></li>
+            <li><a href="https://github.com/yourusername" target="_blank">GitHub主页</a></li>
+        </ul>
+    </nav>
+
+    <section id="projects" class="project-list">
+        <h2>我的项目</h2>
+        <ul id="projectList">
+            <!-- 项目列表将通过JavaScript动态添加 -->
+        </ul>
+    </section>
+
+    <section id="blog" class="blog-list">
+        <h2>我的博客文章</h2>
+        <ul id="blogList">
+            <!-- 博客文章列表将通过JavaScript动态添加 -->
+        </ul>
+    </section>
+
+    <script>
+        // 示例项目数据
+        const projects = [
+            { name: "项目1", url: "#" },
+            { name: "项目2", url: "#" },
+            { name: "项目3", url: "#" }
+        ];
+
+        // 示例博客文章数据
+        const blogPosts = [
+            { title: "文章1", url: "#" },
+            { title: "文章2", url: "#" },
+            { title: "文章3", url: "#" }
+        ];
+
+        // 动态添加项目列表
+        const projectList = document.getElementById('projectList');
+        projects.forEach(project => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${project.url}">${project.name}</a>`;
+            projectList.appendChild(li);
+        });
+
+        // 动态添加博客文章列表
+        const blogList = document.getElementById('blogList');
+        blogPosts.forEach(post => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${post.url}">${post.title}</a>`;
+            blogList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
